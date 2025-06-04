@@ -31,6 +31,15 @@ interface SortFilterModalProps {
 
 const { height: SCREEN_HEIGHT } = Dimensions.get('window');
 
+// Default filter options
+const DEFAULT_FILTERS: FilterOptions = {
+  sortBy: SortBy.CREATED_DESC,
+  viewMode: ViewMode.GRID,
+  showArchived: false,
+  showDeleted: false,
+  noteType: undefined,
+};
+
 const SortFilterModal: React.FC<SortFilterModalProps> = ({
   visible,
   onClose,
@@ -41,10 +50,16 @@ const SortFilterModal: React.FC<SortFilterModalProps> = ({
   const isDark = colorScheme === 'dark';
   const theme = isDark ? DARK_THEME : LIGHT_THEME;
 
-  const [localFilters, setLocalFilters] = useState<FilterOptions>(filters);
+  // Use default filters if filters prop is undefined, and initialize with a safe fallback
+  const [localFilters, setLocalFilters] = useState<FilterOptions>(() => {
+    return filters || DEFAULT_FILTERS;
+  });
 
   useEffect(() => {
-    setLocalFilters(filters);
+    // Only update if filters is defined
+    if (filters) {
+      setLocalFilters(filters);
+    }
   }, [filters]);
 
   const handleApply = () => {
@@ -53,14 +68,7 @@ const SortFilterModal: React.FC<SortFilterModalProps> = ({
   };
 
   const handleReset = () => {
-    const resetFilters: FilterOptions = {
-      sortBy: SortBy.CREATED_DESC,
-      viewMode: ViewMode.GRID,
-      showArchived: false,
-      showDeleted: false,
-      noteType: undefined,
-    };
-    setLocalFilters(resetFilters);
+    setLocalFilters(DEFAULT_FILTERS);
   };
 
   const updateFilter = <K extends keyof FilterOptions>(

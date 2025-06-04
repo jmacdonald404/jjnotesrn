@@ -84,7 +84,7 @@ export const NotesContextProvider: React.FC<{ children: React.ReactNode }> = ({ 
 export const useNotes = () => {
   const context = useContext(NotesContext);
   if (context === undefined) {
-    throw new Error('useNotes must be used within a NotesProvider');
+    throw new Error('useNotes must be used within a NotesContextProvider');
   }
   return context;
 };

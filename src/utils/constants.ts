@@ -1,7 +1,7 @@
 // utils/constants.ts
-import { Color, Theme, ViewMode, SortBy, UserSettings } from '../types';
+import { ColorOption, Theme, ViewMode, SortBy, UserSettings } from '../types';
 
-export const COLORS: Color[] = [
+export const COLORS: ColorOption[] = [
   { label: 'Default', value: '#ffffff', border: '#e4e4e7' },
   { label: 'Red', value: '#fef2f2', border: '#fecaca' },
   { label: 'Orange', value: '#fff7ed', border: '#fed7aa' },
@@ -12,7 +12,7 @@ export const COLORS: Color[] = [
   { label: 'Pink', value: '#fdf2f8', border: '#f9a8d4' },
 ];
 
-export const DARK_COLORS: Color[] = [
+export const DARK_COLORS: ColorOption[] = [
   { label: 'Default', value: '#1f1f23', border: '#27272a' },
   { label: 'Red', value: '#450a0a', border: '#7f1d1d' },
   { label: 'Orange', value: '#431407', border: '#9a3412' },
