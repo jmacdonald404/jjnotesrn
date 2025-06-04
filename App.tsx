@@ -91,8 +91,8 @@ function MainTabs() {
         />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
-      {/* FloatingActionButton component doesn't exist yet */}
-      {/* <FloatingActionButton /> */}
+
+      <FloatingActionButton />
     </>
   );
 }
@@ -105,8 +105,7 @@ function AppNavigator() {
       }}
     >
       <Stack.Screen name="MainTabs" component={MainTabs} />
-      {/* NoteViewScreen doesn't exist yet */}
-      {/* <Stack.Screen 
+      <Stack.Screen 
         name="NoteView" 
         component={NoteViewScreen}
         options={{
@@ -114,7 +113,7 @@ function AppNavigator() {
           presentation: 'modal',
           animation: 'slide_from_right',
         }}
-      /> */}
+      />
     </Stack.Navigator>
   );
 }
