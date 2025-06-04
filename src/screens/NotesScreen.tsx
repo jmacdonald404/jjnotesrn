@@ -16,9 +16,9 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { useNotes } from '../context/NotesContext';
 import { useSettings } from '../context/SettingsContext';
 import { Note, ViewMode, SortBy } from '../types';
-import NoteCard from '../components/NoteCard';
-import SortFilterModal from '../components/SortFilterModal';
-import { RootStackParamList } from '../App';
+import NoteCard from '../components/notes/NoteCard';
+import SortFilterModal from '../components/notes/SortFilterModal';
+import { RootStackParamList } from '../../App';
 
 type NavigationProp = StackNavigationProp<RootStackParamList>;
 

@@ -21,7 +21,7 @@ const defaultSettings: UserSettings = {
 
 const NotesContext = createContext<NotesContextType | undefined>(undefined);
 
-export const NotesProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
+export const NotesContextProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [notes, setNotes] = useState<Note[]>([]);
   const [settings, setSettings] = useState<UserSettings>(defaultSettings);
 

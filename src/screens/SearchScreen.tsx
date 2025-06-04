@@ -10,8 +10,8 @@ import { StackNavigationProp } from '@react-navigation/stack';
 import { useNotes } from '../context/NotesContext';
 import { useSettings } from '../context/SettingsContext';
 import { Note } from '../types';
-import NoteCard from '../components/NoteCard';
-import { RootStackParamList } from '../App';
+import NoteCard from '../components/notes/NoteCard';
+import { RootStackParamList } from '../../App';
 
 type NavigationProp = StackNavigationProp<RootStackParamList>;
 

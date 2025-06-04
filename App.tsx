@@ -12,15 +12,13 @@ import NotesScreen from './src/screens/NotesScreen';
 import CalendarScreen from './src/screens/CalendarScreen';
 import SearchScreen from './src/screens/SearchScreen';
 import SettingsScreen from './src/screens/SettingsScreen';
-// Note: NoteViewScreen and FloatingActionButton don't exist yet
-// import NoteViewScreen from './src/screens/NoteViewScreen';
-// import FloatingActionButton from './src/components/FloatingActionButton';
+import NoteViewScreen from './src/screens/NoteViewScreen';
+import FloatingActionButton from './src/components/FloatingActionButton';
 
 // Import types and providers with correct paths
 import { ThemeContextProvider } from './src/context/ThemeContext';
 import { NotesContextProvider } from './src/context/NotesContext';
-// Note: SettingsContextProvider doesn't exist in your files
-// import { SettingsContextProvider } from './src/context/SettingsContext';
+import { SettingsContextProvider } from './src/context/SettingsContext';
 
 export type RootStackParamList = {
   MainTabs: undefined;
@@ -126,15 +124,14 @@ export default function App() {
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
         <ThemeContextProvider>
-          {/* SettingsContextProvider doesn't exist yet */}
-          {/* <SettingsContextProvider> */}
+          <SettingsContextProvider>
             <NotesContextProvider>
               <NavigationContainer>
                 <StatusBar style="auto" />
                 <AppNavigator />
               </NavigationContainer>
             </NotesContextProvider>
-          {/* </SettingsContextProvider> */}
+          </SettingsContextProvider>
         </ThemeContextProvider>
       </ThemeProvider>
     </SafeAreaProvider>

@@ -83,3 +83,89 @@ const ColorPicker: React.FC<ColorPickerProps> = ({
               styles.labelOption,
               selectedColor === color.value && {
                 backgroundColor: theme.accent,
+              },
+            ]}
+            onPress={() => onColorSelect(color.value)}
+            activeOpacity={0.7}
+          >
+            <Text
+              style={[
+                styles.labelText,
+                {
+                  color: selectedColor === color.value ? theme.background : theme.mutedForeground,
+                },
+              ]}
+            >
+              {color.name}
+            </Text>
+          </TouchableOpacity>
+        ))}
+      </View>
+    </View>
+  );
+};
+
+const styles = StyleSheet.create({
+  container: {
+    marginVertical: 8,
+  },
+  title: {
+    fontSize: 16,
+    fontWeight: '600',
+    marginBottom: 12,
+    textAlign: 'center',
+  },
+  scrollContainer: {
+    paddingHorizontal: 4,
+    paddingVertical: 8,
+  },
+  colorOption: {
+    width: 44,
+    height: 44,
+    borderRadius: 22,
+    marginHorizontal: 6,
+    borderWidth: 2,
+    justifyContent: 'center',
+    alignItems: 'center',
+    shadowColor: '#000',
+    shadowOffset: {
+      width: 0,
+      height: 2,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 4,
+    elevation: 3,
+  },
+  selectedColorOption: {
+    borderWidth: 3,
+    transform: [{ scale: 1.1 }],
+  },
+  selectedIndicator: {
+    backgroundColor: 'rgba(255, 255, 255, 0.9)',
+    borderRadius: 10,
+    width: 20,
+    height: 20,
+    justifyContent: 'center',
+    alignItems: 'center',
+  },
+  labelsContainer: {
+    flexDirection: 'row',
+    flexWrap: 'wrap',
+    justifyContent: 'center',
+    marginTop: 12,
+    paddingHorizontal: 8,
+  },
+  labelOption: {
+    backgroundColor: 'transparent',
+    paddingHorizontal: 12,
+    paddingVertical: 6,
+    borderRadius: 16,
+    margin: 2,
+  },
+  labelText: {
+    fontSize: 12,
+    fontWeight: '500',
+  },
+});
+
+export default ColorPicker;
