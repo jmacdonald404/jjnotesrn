@@ -7,18 +7,20 @@ import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { ThemeProvider } from 'react-native-elements';
 import { Ionicons } from '@expo/vector-icons';
 
-// Import screens (these will be created in next steps)
-import NotesScreen from './screens/NotesScreen';
-import CalendarScreen from './screens/CalendarScreen';
-import SearchScreen from './screens/SearchScreen';
-import SettingsScreen from './screens/SettingsScreen';
-import NoteViewScreen from './screens/NoteViewScreen';
-import FloatingActionButton from './components/FloatingActionButton';
+// Import screens with correct paths
+import NotesScreen from './src/screens/NotesScreen';
+import CalendarScreen from './src/screens/CalendarScreen';
+import SearchScreen from './src/screens/SearchScreen';
+import SettingsScreen from './src/screens/SettingsScreen';
+// Note: NoteViewScreen and FloatingActionButton don't exist yet
+// import NoteViewScreen from './src/screens/NoteViewScreen';
+// import FloatingActionButton from './src/components/FloatingActionButton';
 
-// Import types and providers
-import { ThemeContextProvider } from './context/ThemeContext';
-import { NotesContextProvider } from './context/NotesContext';
-import { SettingsContextProvider } from './context/SettingsContext';
+// Import types and providers with correct paths
+import { ThemeContextProvider } from './src/context/ThemeContext';
+import { NotesContextProvider } from './src/context/NotesContext';
+// Note: SettingsContextProvider doesn't exist in your files
+// import { SettingsContextProvider } from './src/context/SettingsContext';
 
 export type RootStackParamList = {
   MainTabs: undefined;
@@ -91,7 +93,8 @@ function MainTabs() {
         />
         <Tab.Screen name="Settings" component={SettingsScreen} />
       </Tab.Navigator>
-      <FloatingActionButton />
+      {/* FloatingActionButton component doesn't exist yet */}
+      {/* <FloatingActionButton /> */}
     </>
   );
 }
@@ -104,7 +107,8 @@ function AppNavigator() {
       }}
     >
       <Stack.Screen name="MainTabs" component={MainTabs} />
-      <Stack.Screen 
+      {/* NoteViewScreen doesn't exist yet */}
+      {/* <Stack.Screen 
         name="NoteView" 
         component={NoteViewScreen}
         options={{
@@ -112,7 +116,7 @@ function AppNavigator() {
           presentation: 'modal',
           animation: 'slide_from_right',
         }}
-      />
+      /> */}
     </Stack.Navigator>
   );
 }
@@ -122,14 +126,15 @@ export default function App() {
     <SafeAreaProvider>
       <ThemeProvider theme={theme}>
         <ThemeContextProvider>
-          <SettingsContextProvider>
+          {/* SettingsContextProvider doesn't exist yet */}
+          {/* <SettingsContextProvider> */}
             <NotesContextProvider>
               <NavigationContainer>
                 <StatusBar style="auto" />
                 <AppNavigator />
               </NavigationContainer>
             </NotesContextProvider>
-          </SettingsContextProvider>
+          {/* </SettingsContextProvider> */}
         </ThemeContextProvider>
       </ThemeProvider>
     </SafeAreaProvider>

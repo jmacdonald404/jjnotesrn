@@ -58,6 +58,13 @@ export interface ColorOption {
   border: string;
 }
 
+// Add the Color interface that was missing
+export interface Color {
+  label: string;
+  value: string;
+  border: string;
+}
+
 // Navigation types
 export type RootTabParamList = {
   Notes: undefined;
